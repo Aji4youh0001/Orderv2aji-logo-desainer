@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>XINNDESAINER — ULTRA GODMODE</title>
+  <meta name="description" content="XINNDESAINER — Jasa desain logo premium. Ultra RGB Godmode." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- CANVAS PARTICLES -->
+  <canvas id="scene"></canvas>
+
+  <!-- LOADING SCREEN -->
+  <div id="loading" class="loading">
+    <div class="loader">
+      <div class="loader-line"></div>
+      <div class="loader-text">XINNDESAINER — LOADING</div>
+    </div>
+  </div>
+
+  <!-- TOPBAR / HUD -->
+  <header class="topbar">
+    <div class="brand">
+      <div id="logo" class="logo">XD</div>
+      <div class="brand-info">
+        <div class="brand-name">XINNDESAINER</div>
+        <div class="brand-sub">Muhammad Aji Sukmo — Jasa desain logo premium</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#promo">Promo</a>
+      <a href="#produk">Produk</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+
+    <div class="actions">
+      <button id="toggleSound" class="btn ghost">🔊</button>
+      <button id="btnWA" class="btn">WhatsApp</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="home" class="container">
+    <section class="hero">
+      <h1 class="neon-title">Selamat datang di XINNDESAINER</h1>
+      <p class="lead">Selamat datang di XINNDESAINER, tempat desain logo profesional</p>
+      <div class="hero-actions">
+        <button class="btn primary" onclick="openWA('Halo, saya tertarik jasa desain logo')">Pesan via WhatsApp</button>
+        <a class="btn ghost" href="#produk">Lihat Paket</a>
+      </div>
+
+      <!-- RUNNING MARQUEE -->
+      <div class="marquee"><span>🔥 GRAND OPENING — Logo mulai Rp5.000 – Rp10.000 — Diskon Terbatas! 🔥</span></div>
+    </section>
+
+    <!-- PROMO SLIDER -->
+    <section id="promo" class="promo">
+      <div class="slider" id="slider">
+        <div class="slide">Promo 1 — Diskon 50% 20 pelanggan pertama</div>
+        <div class="slide">Promo 2 — Bundle UMKM (logo + banner)</div>
+        <div class="slide">Promo 3 — Express 5 menit (opsional)</div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="produk" class="produk">
+      <h2>Produk & Paket</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="thumb"><img src="https://picsum.photos/seed/p1/800/600" alt="Logo Express" /></div>
+          <h3>Logo Express</h3>
+          <p class="muted">1 konsep, revisi 1x — kirim cepat</p>
+          <div class="price">Rp 5.000</div>
+          <div class="card-actions">
+            <button class="btn primary" onclick="buy('Logo Express','Rp 5.000')">Beli Sekarang</button>
+            <button class="btn ghost" onclick="preview('Logo Express','https://picsum.photos/seed/p1/800/500','1 konsep, revisi 1x','Rp 5.000')">Lihat</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img src="https://picsum.photos/seed/p2/800/600" alt="Logo Premium" /></div>
+          <h3>Logo Premium</h3>
+          <p class="muted">3–5 konsep, brandbook singkat</p>
+          <div class="price">Rp 10.000</div>
+          <div class="card-actions">
+            <button class="btn primary" onclick="buy('Logo Premium','Rp 10.000')">Beli Sekarang</button>
+            <button class="btn ghost" onclick="preview('Logo Premium','https://picsum.photos/seed/p2/800/500','3–5 konsep, brandbook','Rp 10.000')">Lihat</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img src="https://picsum.photos/seed/p3/800/600" alt="Logo RGB Glow" /></div>
+          <h3>Logo RGB Glow</h3>
+          <p class="muted">Efek neon RGB, file vector</p>
+          <div class="price">Rp 10.000</div>
+          <div class="card-actions">
+            <button class="btn primary" onclick="buy('Logo RGB Glow','Rp 10.000')">Beli Sekarang</button>
+            <button class="btn ghost" onclick="preview('Logo RGB Glow','https://picsum.photos/seed/p3/800/500','Neon RGB, vector','Rp 10.000')">Lihat</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="portfolio">
+      <h2>Portfolio</h2>
+      <div class="grid">
+        <div class="card"><div class="thumb placeholder">Contoh 1</div></div>
+        <div class="card"><div class="thumb placeholder">Contoh 2</div></div>
+        <div class="card"><div class="thumb placeholder">Contoh 3</div></div>
+        <div class="card"><div class="thumb placeholder">Contoh 4</div></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="kontak" class="kontak">
+      <h2>Kontak</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>WhatsApp</h3>
+          <p class="muted">Klik untuk chat langsung</p>
+          <button class="btn primary" onclick="openWA('Halo saya ingin pesan jasa desain logo')">Chat WhatsApp</button>
+        </div>
+        <div class="card">
+          <h3>Instagram</h3>
+          <p class="muted">Follow & DM: <a href="https://instagram.com/xinndesainer" target="_blank">@xinndesainer</a></p>
+          <a class="btn ghost" href="https://instagram.com/xinndesainer" target="_blank">Instagram</a>
+        </div>
+      </div>
+
+      <h3>Form (opsional)</h3>
+      <form id="orderForm" onsubmit="sendForm(event)">
+        <input id="name" placeholder="Nama" required />
+        <input id="email" placeholder="Email (opsional)" />
+        <textarea id="message" placeholder="Deskripsi pesanan"></textarea>
+        <div style="margin-top:10px"><button class="btn primary" type="submit">Kirim via WhatsApp</button></div>
+      </form>
+    </section>
+  </main>
+
+  <!-- MODAL PREVIEW -->
+  <div id="modal" class="modal" onclick="if(event.target.id==='modal') closeModal()">
+    <div class="modal-card" id="modalContent"></div>
+  </div>
+
+  <footer class="footer">© <span id="year"></span> XINNDESAINER — Muhammad Aji Sukmo</footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

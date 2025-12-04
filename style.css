@@ -1,0 +1,64 @@
+/* ULTRA GODMODE - CSS (cleaned & optimized for readability) */
+:root{
+  --bg:#03020a; --muted:#9fb0c9; --card:#071018;
+  --accent1:#ff0058; --accent2:#00f0ff; --accent3:#7cff00;
+  --glass: rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,#03020a,#070717);color:#fff;font-family:Inter,system-ui,Arial}
+canvas#scene{position:fixed;inset:0;z-index:-10}
+.topbar{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03);z-index:60}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;color:#02111a;font-weight:900;box-shadow:0 12px 40px rgba(0,0,0,0.6)}
+.brand-info .brand-name{font-weight:800}
+.brand-info .brand-sub{font-size:12px;color:var(--muted)}
+.nav a{color:inherit;text-decoration:none;margin-left:12px;padding:8px;border-radius:8px}
+.nav a:hover{transform:translateY(-3px)}
+.actions{display:flex;gap:8px;align-items:center}
+.container{max-width:1100px;margin:0 auto;padding:28px 20px}
+.hero .neon-title{font-size:clamp(26px,5vw,44px);margin:0;text-shadow:0 0 20px rgba(0,200,255,0.12)}
+.lead{color:var(--muted);margin:8px 0 18px}
+.marquee{overflow:hidden;border-radius:10px;padding:10px;background:linear-gradient(90deg,rgba(255,0,128,0.06),rgba(0,200,255,0.04));border:1px solid rgba(255,255,255,0.03);margin-top:16px}
+.marquee span{display:inline-block;white-space:nowrap;font-weight:700;animation:marq 16s linear infinite}
+@keyframes marq{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
+
+/* slider */
+.promo .slider{position:relative;overflow:hidden;border-radius:12px;margin:18px 0}
+.promo .slide{min-height:140px;display:flex;align-items:center;justify-content:center;padding:24px;background:linear-gradient(90deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));transition:transform .5s}
+.promo .slide-inner{text-align:center}
+
+/* grid cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:18px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:12px;padding:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 40px rgba(2,6,23,0.6);display:flex;flex-direction:column}
+.thumb{height:160px;border-radius:10px;overflow:hidden;background:#071018;display:flex;align-items:center;justify-content:center}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.muted{color:var(--muted)}
+.price{font-weight:800;color:var(--accent2);margin-top:8px}
+.card-actions{display:flex;gap:8px;margin-top:12px}
+.btn{padding:10px 14px;border-radius:10px;border:none;background:linear-gradient(90deg,var(--accent2),var(--accent1));color:#02111a;font-weight:800;cursor:pointer}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#fff}
+
+/* forms */
+input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:#fff;margin-top:8px}
+
+/* modal */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0;transition:.18s;z-index:100}
+.modal.open{pointer-events:auto;opacity:1;background:rgba(0,0,0,0.6)}
+.modal-card{background:#071018;border-radius:12px;padding:18px;max-width:900px;width:94%;border:1px solid rgba(255,255,255,0.03)}
+.modal-close{position:absolute;right:12px;top:8px;border:none;background:transparent;color:#fff;font-size:22px}
+
+/* footer */
+.footer{padding:30px 20px;text-align:center;color:var(--muted);margin-top:18px}
+
+/* loading */
+.loading{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#000;z-index:200}
+.loader{display:flex;flex-direction:column;align-items:center;gap:12px}
+.loader-line{width:220px;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--accent2),var(--accent1));box-shadow:0 8px 30px rgba(0,0,0,0.6);animation:loadingPulse 1.8s infinite}
+@keyframes loadingPulse{0%{transform:scaleX(.4)}50%{transform:scaleX(.9)}100%{transform:scaleX(.4)}}
+
+/* breathing (subtle) */
+@keyframes breathing{0%{filter:brightness(.98)}50%{filter:brightness(1.05)}100%{filter:brightness(.98)}}
+body{animation:breathing 6s infinite}
+
+/* responsive */
+@media(max-width:800px){.grid{grid-template-columns:1fr}.logo{width:44px;height:44px}}
